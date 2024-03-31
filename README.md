@@ -1,3 +1,10 @@
+## Building
+
+```sh
+docker build -t sm64-builder .
+docker run --rm --mount type=bind,source="$(pwd)",destination=/sm64 sm64-builder make VERSION=us -j cia
+```
+
 # Super Mario 64 Nintendo 3DS Port
 
 This repo does **not** include all assets necessary for compiling the game.
