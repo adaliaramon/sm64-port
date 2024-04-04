@@ -1465,7 +1465,7 @@ void update_mario_health(struct MarioState *m) {
         if (((u32) m->healCounter | (u32) m->hurtCounter) == 0) {
             if ((m->input & INPUT_IN_POISON_GAS) && ((m->action & ACT_FLAG_INTANGIBLE) == 0)) {
                 if (((m->flags & MARIO_METAL_CAP) == 0) && (gDebugLevelSelect == 0)) {
-                    m->health -= 4;
+                    // m->health -= 4;  // Cheat: invincible Mario
                 }
             } else {
                 if ((m->action & ACT_FLAG_SWIMMING) && ((m->action & ACT_FLAG_INTANGIBLE) == 0)) {
@@ -1477,7 +1477,7 @@ void update_mario_health(struct MarioState *m) {
                     if ((m->pos[1] >= (m->waterLevel - 140)) && !terrainIsSnow) {
                         m->health += 0x1A;
                     } else if (gDebugLevelSelect == 0) {
-                        m->health -= (terrainIsSnow ? 3 : 1);
+                        // m->health -= (terrainIsSnow ? 3 : 1);  // Cheat: invincible Mario
                     }
                 }
             }
@@ -1488,7 +1488,7 @@ void update_mario_health(struct MarioState *m) {
             m->healCounter--;
         }
         if (m->hurtCounter > 0) {
-            m->health -= 0x40;
+            // m->health -= 0x40;  // Cheat: invincible Mario
             m->hurtCounter--;
         }
 
