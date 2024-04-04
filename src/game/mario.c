@@ -874,6 +874,8 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
             //  too much velocity, but misses backwards longs allowing high negative speeds.
             if ((m->forwardVel *= 1.5f) > 48.0f) {
                 m->forwardVel = 48.0f;
+            } else if (m->forwardVel < 0.0f) {  // Cheat: free BLJs
+                m->vel[1] = 0.0f;
             }
             break;
 
